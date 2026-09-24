@@ -1,0 +1,32 @@
+print("Adivina al numero")#Es el titulo de juego
+
+print("Piensa en un numero del 1 al 100")#Explico como funciona el juego
+print("Yo intentare adivinarlo")
+print("Cuando haga un intento, escribe:")
+print("mayor, menor o correcto")
+
+
+limite_inferior = 1 #Guarda el limite inferior del rango de numeros 
+limite_superior = 100 #Guarda el limite superior del rango de numeros 
+intentos = 0 #Esta variable va ser la encargada de guardar los intentos hechos 
+while True: #Repite el juego hasta adivinar el numero 
+    numero = (limite_inferior + limite_superior) // 2 #Se suma el limite inferior con el limite superior y luego lo divide para dos lo cual el resultado va a ser entero.
+    intentos = intentos + 1 #Suma uno al numero de intentos 
+    print("¿Tu numero es", numero, "?")#Muestra el numero que la computadora esta intenado adivinar 
+    respuesta = input("Escribe mayor, menor, correcto:")#Le pide al jugador que le diga si el numero es mayor, menor o correcto
+
+    if respuesta == "correcto":#Revisa si el jugador dijo "correcto"
+       print("¡Adivine tu numero!")#Muestra un mensaje cuando la computadora adivina el numero 
+       print("Lo hice en" , intentos , "intentos")#Muestra cuantos intentos se hicieron 
+       break #Termina el juego 
+    if respuesta == "mayor":#Revisa si el numero es mayor que el intento 
+       limite_inferior = numero + 1 #Sube el limite inferior para seguir buscando 
+    if respuesta =="menor":#Revisa si el numero es menor que el intento
+       limite_superior = numero - 1 #Baja el limite superior para seguir buscando 
+    if respuesta!= "correcto" and respuesta != "mayor" and respuesta != "menor":#Revisa si la respuesta esta bien, es mayor o menor 
+       print("Respuesta no valida")#Muestra un mensaje si algo esta mal 
+
+
+
+
+
